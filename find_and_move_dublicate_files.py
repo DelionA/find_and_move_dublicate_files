@@ -63,6 +63,7 @@ dict_files = dict()
 set_compared = set()
 set_subject_to_transfer = set()
 #
-create_files_dict()
-find_dublicate_files_func()
-move_files_func()
+if __name__ == '__main__':
+    create_files_dict()
+    find_dublicate_files_func()
+    move_files_func()
