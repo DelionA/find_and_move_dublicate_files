@@ -4,15 +4,15 @@ import filecmp
 import shutil
 
 def create_files_dict():
-    print('\nзапуск создания словаря файлов... ')
+    print('\nstart create files dict... ')
     for dirpath, dirnames,filenames in os.walk(path):
         for name in filenames:
             if name not in dict_files:
                 dict_files[name] = list()
             dict_files[name].append(os.path.join(dirpath, name))
-    print('\nсоздание словаря закончено...')
+    print('\nend create files dict...')
     files_count = len(dict_files)
-    print(f'\nвсего найдено файлов...{files_count}')
+    print(f'\nall find files...{files_count}')
 
 def compared_two_files(file_1, file_2):
     return filecmp.cmp(file_1, file_2)
@@ -41,17 +41,17 @@ def find_dublicate_files_func():
     for key in dict_files:
         comparsion_file_list(dict_files[key])
     files_to_transfer = len(set_subject_to_transfer)
-    print(f'\nнужно переместить файлов...{files_to_transfer}')
+    print(f'\nneed move files...{files_to_transfer}')
     
 def move_files_func(numerate=1):
-    print('начинаем перемещение файлов...')
+    print('start file move...')
     for file_move in set_subject_to_transfer:
         print_func(file_move)
         print()
         new_file_name =  path_to_destination + str(numerate) + '_' + file_move.split('/')[-1]
         shutil.move(file_move, new_file_name)
         numerate += 1
-    print('перемещение файлов законено...')
+    print('end files move...')
 
 def print_func(data=''):
     print(data+'\r', end='')
