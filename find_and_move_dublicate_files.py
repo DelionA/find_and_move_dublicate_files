@@ -96,7 +96,7 @@ set_subject_to_transfer = set()
 dict_folders=dict()
 
 okno = tk.Tk()
-okno.title('Welcome')
+okno.title('Find and Move Dublicated File')
 okno.geometry('500x350')
 btn_1=tk.Button(okno,text='Choice Source Folder ->',command=set_source_directory)
 btn_2=tk.Button(okno,text='Choice Dublicate Folder ->',command=set_dublicate_folder)
